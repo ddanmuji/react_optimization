@@ -3,10 +3,10 @@ import React from 'react';
 function BannerImage(props) {
   return (
     <div className="BannerImage w-full h-screen overflow-hidden relative bg-texture">
-      <div className="absolute h-screen w-full left-1/2">
+      <div className="absolute h-screen w-full">
         <img
           src={props.image}
-          className="absolute translateX--1/2 h-screen max-w-none min-w-full -z-1"
+          className="absolute translateX--1/2 h-screen max-w-none min-w-full -z-10"
         />
       </div>
       <div className="w-full h-full flex justify-center items-center">

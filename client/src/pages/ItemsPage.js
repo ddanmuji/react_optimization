@@ -9,7 +9,7 @@ function ItemsPage(props) {
   const [items, setItems] = useState([]);
 
   const getItems = () => {
-    axios.get('http://localhost:3001/items').then((success) => {
+    axios.get('http://localhost:8001/items').then((success) => {
       console.log(success.data);
       setItems(success.data);
     });

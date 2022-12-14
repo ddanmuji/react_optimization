@@ -6,8 +6,7 @@ import MainPage from './pages/MainPage';
 import ItemsPage from './pages/ItemsPage';
 import PartPage from './pages/PartPage';
 import RidingStylesPage from './pages/RidingStylesPage';
-import './App.css';
-import './styles.css';
+import './styles/global.css';
 
 const App = () => (
   <BrowserRouter>
