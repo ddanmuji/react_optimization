@@ -1,4 +1,4 @@
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,12 +14,12 @@ const App = () => (
     <div className="App">
       <Header />
       <section className="mx-auto mt-16">
-        <Switch>
+        <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/items" element={<ItemsPage />} />
           <Route path="/part" element={<PartPage />} />
           <Route path="/riding-styles" element={<RidingStylesPage />} />
-        </Switch>
+        </Routes>
       </section>
       <Footer />
     </div>

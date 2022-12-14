@@ -1,4 +1,4 @@
-import nanoid from 'nanoid';
+import { nanoid } from 'nanoid';
 
 import BannerVideo from '../components/BannerVideo';
 import ThreeColumns from '../components/ThreeColumns';
