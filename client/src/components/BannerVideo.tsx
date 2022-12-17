@@ -1,16 +1,19 @@
-import banner_video from '../assets/video/banner-video.mp4';
+import bannerVideo from '../assets/video/banner-video.mp4';
+import bannerVideoWebm from '../assets/video/banner-video.webm';
 
 const BannerVideo = () => {
   return (
     <div className="BannerVideo w-full h-screen overflow-hidden relative bg-texture">
       <div className="absolute h-screen w-full">
         <video
-          src={banner_video}
           className="absolute translateX--1/2 h-screen max-w-none min-w-screen -z-10 bg-black min-w-full min-h-screen"
           autoPlay
           loop
           muted
-        />
+        >
+          <source src={bannerVideoWebm} type="video/webm" />
+          <source src={bannerVideo} type="video/mp4" />
+        </video>
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <div className="text-white text-center">

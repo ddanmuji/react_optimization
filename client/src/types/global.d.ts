@@ -18,6 +18,11 @@ declare module '*.mp4' {
   export = value;
 }
 
+declare module '*.webm' {
+  const value: any;
+  export = value;
+}
+
 declare module '*.ttf' {
   const value: any;
   export = value;
