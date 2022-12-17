@@ -6,9 +6,12 @@ import main2 from '../assets/images/main2.jpg';
 import mainWebp2 from '../assets/images/main2.webp';
 import main3 from '../assets/images/main3.jpg';
 import mainWebp3 from '../assets/images/main3.webp';
-import main_items from '../assets/images/main-items.jpg';
-import main_parts from '../assets/images/main-parts.jpg';
-import main_styles from '../assets/images/main-styles.jpg';
+import mainItems from '../assets/images/main-items.jpg';
+import mainItemsWebp from '../assets/images/main-items.webp';
+import mainParts from '../assets/images/main-parts.jpg';
+import mainPartsWebp from '../assets/images/main-parts.webp';
+import mainStyles from '../assets/images/main-styles.jpg';
+import mainStylesWebp from '../assets/images/main-styles.webp';
 import { BannerVideo, Card, Image, Meta, ThreeColumns, TwoColumns } from '../components';
 import { ROUTER_PATH } from '../constants';
 
@@ -33,7 +36,7 @@ const MainPage = () => {
         <TwoColumns
           bgColor="#f4f4f4"
           columns={[
-            <Image key={nanoid()} src={main_items} />,
+            <Image key={nanoid()} src={mainItems} webp={mainItemsWebp} />,
             <Meta
               key={nanoid()}
               title="Items"
@@ -51,14 +54,14 @@ const MainPage = () => {
               content="롱보드는 데크, 트럭, 휠, 킹핀, 베어링 등 여러 부품들로 구성됩니다. 롱보드를 타다보면 조금씩 고장나는 부품이 있기 마련인데, 이럴때를 위해 롱보들의 부품들에 대해서 알고 있으면 큰 도움이 됩니다."
               btnLink={ROUTER_PATH.PART}
             />,
-            <Image key={nanoid()} src={main_parts} />,
+            <Image key={nanoid()} src={mainParts} webp={mainPartsWebp} />,
           ]}
           mobileReverse={true}
         />
         <TwoColumns
           bgColor="#f4f4f4"
           columns={[
-            <Image key={nanoid()} src={main_styles} />,
+            <Image key={nanoid()} src={mainStyles} webp={mainStylesWebp} />,
             <Meta
               key={nanoid()}
               title="Riding Styles"
