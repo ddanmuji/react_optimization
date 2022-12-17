@@ -1,12 +1,11 @@
-import React from 'react';
-import video from '../assets/banner-video.mp4';
+import banner_video from '../assets/video/banner-video.mp4';
 
-function BannerVideo() {
+const BannerVideo = () => {
   return (
     <div className="BannerVideo w-full h-screen overflow-hidden relative bg-texture">
       <div className="absolute h-screen w-full">
         <video
-          src={video}
+          src={banner_video}
           className="absolute translateX--1/2 h-screen max-w-none min-w-screen -z-10 bg-black min-w-full min-h-screen"
           autoPlay
           loop
@@ -24,6 +23,6 @@ function BannerVideo() {
       </div>
     </div>
   );
-}
+};
 
 export default BannerVideo;

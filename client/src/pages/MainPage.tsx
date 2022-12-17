@@ -1,31 +1,27 @@
 import { nanoid } from 'nanoid';
 
-import BannerVideo from '../components/BannerVideo';
-import ThreeColumns from '../components/ThreeColumns';
-import TwoColumns from '../components/TwoColumns';
-import Card from '../components/Card';
-import Meta from '../components/Meta';
-import main1 from '../assets/main1.jpg';
-import main2 from '../assets/main2.jpg';
-import main3 from '../assets/main3.jpg';
-import main_items from '../assets/main-items.jpg';
-import main_parts from '../assets/main-parts.jpg';
-import main_styles from '../assets/main-styles.jpg';
+import main1 from '../assets/images/main1.jpg';
+import main2 from '../assets/images/main2.jpg';
+import main3 from '../assets/images/main3.jpg';
+import main_items from '../assets/images/main-items.jpg';
+import main_parts from '../assets/images/main-parts.jpg';
+import main_styles from '../assets/images/main-styles.jpg';
+import { BannerVideo, Card, Meta, ThreeColumns, TwoColumns } from '../components';
 
-function MainPage(props) {
+const MainPage = () => {
   return (
     <div className="MainPage -mt-16">
       <BannerVideo />
       <div className="mx-auto">
         <ThreeColumns
           columns={[
-            <Card key={nanoid()} image={main1}>
+            <Card key={nanoid()} imgSrc={main1}>
               롱보드는 아주 재밌습니다.
             </Card>,
-            <Card key={nanoid()} image={main2}>
+            <Card key={nanoid()} imgSrc={main2}>
               롱보드를 타면 아주 신납니다.
             </Card>,
-            <Card key={nanoid()} image={main3}>
+            <Card key={nanoid()} imgSrc={main3}>
               롱보드는 굉장히 재밌습니다.
             </Card>,
           ]}
@@ -76,6 +72,6 @@ function MainPage(props) {
       </div>
     </div>
   );
-}
+};
 
 export default MainPage;

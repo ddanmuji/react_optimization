@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
 
-function Header(props) {
+import logo from '../assets/images/logo.png';
+import { ROUTER_PATH } from '../constants';
+
+const Header = () => {
   const [isOpened, setIsOpened] = useState(false);
 
-  const toggleSidebar = () => {
+  const onClickToggleSidebar = () => {
     setIsOpened(!isOpened);
   };
 
@@ -22,10 +24,9 @@ function Header(props) {
                 <h2 className="ml-3 text-xl">Longboard</h2>
               </div>
             </div>
-
             <div className="flex flex-grow lg:w-3/4 xl:w-4/5 justify-end">
               <button
-                onClick={toggleSidebar}
+                onClick={onClickToggleSidebar}
                 className="flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700"
               >
                 <svg
@@ -67,7 +68,7 @@ function Header(props) {
       >
         <div className="flex flex-col p-3 text-gray-700 text-xl lg:text-2xl">
           <div className="text-right">
-            <button onClick={toggleSidebar}>
+            <button onClick={onClickToggleSidebar}>
               <svg
                 className="fill-current w-5 h-5 ml-auto text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,22 +78,22 @@ function Header(props) {
               </svg>
             </button>
           </div>
-          <Link onClick={toggleSidebar} className="border-b p-3" to={'/'}>
+          <Link onClick={onClickToggleSidebar} className="border-b p-3" to={ROUTER_PATH.MAIN}>
             Main
           </Link>
-          <Link onClick={toggleSidebar} className="border-b p-3" to={'/items'}>
+          <Link onClick={onClickToggleSidebar} className="border-b p-3" to={ROUTER_PATH.ITEMS}>
             Items
           </Link>
-          <Link onClick={toggleSidebar} className="border-b p-3" to={'/part'}>
+          <Link onClick={onClickToggleSidebar} className="border-b p-3" to={ROUTER_PATH.PART}>
             Part of Board
           </Link>
-          <Link onClick={toggleSidebar} className="p-3" to={'/riding-styles'}>
+          <Link onClick={onClickToggleSidebar} className="p-3" to={ROUTER_PATH.RIDING_STYLES}>
             Riding Styles
           </Link>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Header;
