@@ -1,8 +1,13 @@
 ## 로딩 성능 최적화
 
-### 이미지 레이지 로딩
+### 이미지 최적화
 
 - Intersection Observer
+- image lazy loading
+- .webp
+- picture / source tag
+
+###
 
 - 이미지 사이즈 최적화
 - 동영상 최적화

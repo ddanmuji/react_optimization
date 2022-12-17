@@ -1,8 +1,12 @@
-import { FC, ImgHTMLAttributes, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
-type ImageProps = ImgHTMLAttributes<HTMLImageElement>;
+export interface ImageProps {
+  alt?: string;
+  src?: string;
+  webp?: string;
+}
 
-const Image: FC<ImageProps> = ({ src, alt, ...rest }) => {
+const Image: FC<ImageProps> = ({ alt, src, webp }) => {
   const ref = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
@@ -10,9 +14,12 @@ const Image: FC<ImageProps> = ({ src, alt, ...rest }) => {
 
     const callback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       entries.forEach((entry) => {
+        const imageElement = entry.target as HTMLImageElement;
+        const sourceElement = entry.target.previousElementSibling as HTMLSourceElement;
+
         if (entry.isIntersecting) {
-          (entry.target as HTMLImageElement).src =
-            (entry.target as HTMLImageElement).dataset.src || '';
+          imageElement.src = imageElement.dataset.src || '';
+          sourceElement.srcset = sourceElement.dataset.srcset || '';
           observer.unobserve(entry.target);
         }
       });
@@ -22,7 +29,12 @@ const Image: FC<ImageProps> = ({ src, alt, ...rest }) => {
     if (ref.current) observer.observe(ref.current);
   }, []);
 
-  return <img ref={ref} data-src={src} alt={alt} {...rest} />;
+  return (
+    <picture>
+      <source data-srcset={webp} type="image/webp" />
+      <img ref={ref} data-src={src} alt={alt} />
+    </picture>
+  );
 };
 
 export default Image;

@@ -1,8 +1,11 @@
 import { nanoid } from 'nanoid';
 
 import main1 from '../assets/images/main1.jpg';
+import mainWebp1 from '../assets/images/main1.webp';
 import main2 from '../assets/images/main2.jpg';
+import mainWebp2 from '../assets/images/main2.webp';
 import main3 from '../assets/images/main3.jpg';
+import mainWebp3 from '../assets/images/main3.webp';
 import main_items from '../assets/images/main-items.jpg';
 import main_parts from '../assets/images/main-parts.jpg';
 import main_styles from '../assets/images/main-styles.jpg';
@@ -16,19 +19,19 @@ const MainPage = () => {
       <div className="mx-auto">
         <ThreeColumns
           columns={[
-            <Card key={nanoid()} imgSrc={main1}>
+            <Card key={nanoid()} image={{ src: main1, webp: mainWebp1 }}>
               롱보드는 아주 재밌습니다.
             </Card>,
-            <Card key={nanoid()} imgSrc={main2}>
+            <Card key={nanoid()} image={{ src: main2, webp: mainWebp2 }}>
               롱보드를 타면 아주 신납니다.
             </Card>,
-            <Card key={nanoid()} imgSrc={main3}>
+            <Card key={nanoid()} image={{ src: main3, webp: mainWebp3 }}>
               롱보드는 굉장히 재밌습니다.
             </Card>,
           ]}
         />
         <TwoColumns
-          bgColor={'#f4f4f4'}
+          bgColor="#f4f4f4"
           columns={[
             <Image key={nanoid()} src={main_items} />,
             <Meta
